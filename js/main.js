@@ -11,11 +11,15 @@ function getFetch() {
             document.getElementById('choiceName').innerText = data.name[0].toUpperCase() + data.name.slice(1)
 
             // document.getElementById('choiceImg').src = 
-
+            
             fetch(data.evolution_chain.url)
                 .then(res => res.json()) // parse response as JSON
                 .then(data => {
                     
+                    // document.getElementById('evolvesToName').innerText = 
+
+                    console.log(data.chain.evolves_to[0].evolves_to[0].species.name)
+
                 })
 
                 .catch(err => {
