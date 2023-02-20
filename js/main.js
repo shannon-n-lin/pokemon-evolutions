@@ -20,9 +20,9 @@ function getFetch() {
                     document.getElementById('poke2').innerText = poke2[0].toUpperCase() + poke2.slice(1)
                     document.getElementById('poke3').innerText = poke3[0].toUpperCase() + poke3.slice(1)
 
-                    printSprite(poke1, 'poke1Img')
-                    printSprite(poke2, 'poke2Img')
-                    printSprite(poke3, 'poke3Img')
+                    showSprite(poke1, 'poke1Img')
+                    showSprite(poke2, 'poke2Img')
+                    showSprite(poke3, 'poke3Img')
                 })
                 .catch(err => {
                     console.log(`error ${err}`)
@@ -31,8 +31,7 @@ function getFetch() {
         .catch(err => {
             console.log(`error ${err}`)
         })
-
-    function printSprite(pokemon, img) {
+    function showSprite(pokemon, img) {
         fetch('https://pokeapi.co/api/v2/pokemon/' + pokemon)
             .then(res => res.json())
             .then(data => {
